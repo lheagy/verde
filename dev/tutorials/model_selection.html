@@ -238,6 +238,11 @@
 .admonition > p:before {
     margin-right: 4px;  /* make room for the exclamation icon */
 }
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
 </style>
 <div class="sphx-glr-download-link-note admonition note">
 <p class="first admonition-title">Note</p>
@@ -247,7 +252,7 @@
 <span id="sphx-glr-tutorials-model-selection-py"></span><span id="id1"></span><h1>Model Selection<a class="headerlink" href="#model-selection" title="Permalink to this headline">¶</a></h1>
 <p>The Green’s functions based interpolations in Verde are all linear regressions under the
 hood. This means that we can use some of the same tactics from
-<a class="reference external" href="http://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection" title="(in scikit-learn v0.20.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a> to evaluate our interpolator’s performance. Once we have
+<a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.model_selection" title="(in scikit-learn v0.20.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a> to evaluate our interpolator’s performance. Once we have
 a quantified measure of the quality of a given fitted gridder, we can use it to tune the
 gridder’s parameters, like <code class="docutils literal notranslate"><span class="pre">damping</span></code> for a <a class="reference internal" href="../api/generated/verde.Spline.html#verde.Spline" title="verde.Spline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spline</span></code></a>.</p>
 <p>Verde provides adaptations of common scikit-learn tools to work better with spatial
@@ -275,7 +280,7 @@ sample air temperature data.</p>
 <h2>Splitting the data<a class="headerlink" href="#splitting-the-data" title="Permalink to this headline">¶</a></h2>
 <p>We can’t evaluate a gridder on the data that went into fitting it. The true test of a
 model is if it can correctly predict data that it hasn’t seen before. scikit-learn has
-the <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="(in scikit-learn v0.20.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.model_selection.train_test_split</span></code></a> function to separate a dataset
+the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="(in scikit-learn v0.20.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.model_selection.train_test_split</span></code></a> function to separate a dataset
 into two parts: one for fitting the model (called <em>training</em> data) and a separate one
 for evaluating the model (called <em>testing</em> data). Using it with spatial data would
 involve some tedious array conversions so Verde implements
@@ -303,8 +308,8 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
 </div>
 <img alt="../_images/sphx_glr_model_selection_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_model_selection_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>((array([ -9471409.04145469,  -9242651.69892226,  -9518618.69368064,
-        -9226352.10603726,  -9196090.97662381,  -9211980.21676049,
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>((array([ -9471409.04145469,  -9242651.69892227,  -9518618.69368064,
+        -9226352.10603726,  -9196090.97662382,  -9211980.21676049,
         -9111443.79343314,  -9285738.73749109,  -9261270.26198931,
         -9322307.84752338,  -9449918.0091497 ,  -9210462.8659006 ,
         -9437254.33247619,  -9336002.17761117,  -9770852.03064925,
@@ -315,17 +320,17 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
         -9295711.26358295,  -9407680.30533891,  -9409483.94881389,
         -9113314.23851832,  -9581641.24134595,  -9051780.41245142,
         -9151620.1904154 ,  -9526253.16341599,  -9370920.33356321,
-        -9422548.43514848,  -9363887.07831951,  -9926719.2733836 ,
+        -9422548.43514849,  -9363887.07831951,  -9926719.2733836 ,
         -9263865.98169933, -10151535.32091524,  -9105488.90703955,
         -9399024.72527645,  -9275584.89274308,  -9287132.02821771,
         -9254036.60191507,  -9356519.81502485,  -9300826.35830558,
-        -9088836.21992941,  -9329331.55967991,  -9705882.69320157,
+        -9088836.21992941,  -9329331.55967992,  -9705882.69320157,
         -9544881.26957023,  -9339151.39637705,  -9260420.92723128,
         -9092882.48888909,  -9202923.82703691,  -9252023.01052236,
         -9250143.02235004,  -9110031.41653215,  -9210586.92603379,
         -9192082.88001273,  -9144987.74483283,  -9265793.68530754,
         -9038200.59940965,  -9241182.06349818,  -9289031.10256449,
-        -9405189.55958775,  -9354792.51624734,  -9330810.73819114,
+        -9405189.55958776,  -9354792.51624734,  -9330810.73819114,
         -9321372.62498082,  -9228556.55917335,  -9199536.03109192,
         -9278581.42211417,  -9229978.47916156,  -9319244.51654206,
         -9297171.35591977,  -9275775.75448643,  -9559682.59776963,
@@ -339,16 +344,16 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
         -9878049.52882075,  -9261222.54655341,  -9959308.91606633,
         -9374995.23178449,  -9324979.91193078, -10002090.57584577,
         -9291378.70200816,  -9717038.56210237,  -9108943.50459486,
-        -9187130.01777196,  -9178474.43770947,  -9821430.39264604,
+        -9187130.01777197,  -9178474.43770947,  -9821430.39264604,
         -9676089.17505937,  -9590325.45066986,  -9334752.033192  ,
         -9349658.33535029,  -9217667.89671333,  -9192989.47329381,
         -9735189.51389807,  -9062249.17907602,  -9332852.95884533,
-        -9455815.63702027,  -9796236.64251932,  -9443505.05457202,
-        -9320723.69505337,  -9754266.14514927,  -9765097.54908629,
+        -9455815.63702027,  -9796236.64251933,  -9443505.05457202,
+        -9320723.69505337,  -9754266.14514928,  -9765097.54908629,
         -9081077.6900608 ,  -9042075.09280036,  -9433427.55452137,
         -9587615.21391383]), array([2657710.28293861, 3302077.73567252, 2899046.15133399,
        2838589.68737716, 3049850.71722841, 3290767.45780106,
-       2931160.45084784, 3271137.71227972, 3285325.92731206,
+       2931160.45084785, 3271137.71227972, 3285325.92731206,
        3104893.52310543, 3247812.59589509, 3166662.55342553,
        3287606.04132201, 3103141.68482877, 3197876.76156001,
        3149242.24908431, 3067381.83156894, 3400585.90023853,
@@ -373,7 +378,7 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
        3164074.94938398, 3271836.50108902, 2579123.45324659,
        2545954.59014788, 3342747.49976745, 2979356.30060547,
        3009203.6131726 , 2719110.10495866, 2846814.97160994,
-       3188985.42191104, 2983466.36042869, 3294675.45126596,
+       3188985.42191105, 2983466.36042869, 3294675.45126596,
        3039773.54716658, 3071437.56540843, 3483134.04990316,
        3294607.6695262 , 3667917.1194501 , 3619924.68699415,
        2573548.51452294, 2821249.74463368, 2683074.91768678,
@@ -387,9 +392,9 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
        2573738.88783378, 3339785.07776942, 3063935.13249589,
        3648601.05705207, 3330211.5352512 , 3142162.17467495,
        2982622.30031315, 3282673.97488324, 3183676.67838886,
-       3006522.74236789, 2990221.2234946 , 3532083.29147308,
+       3006522.74236789, 2990221.2234946 , 3532083.29147309,
        2942206.50247381, 3121339.67312345, 2913261.59698676,
-       3259243.23756798])), (array([18.15166667, 12.17857143, 16.45916667, 16.60084507, 12.41170213,
+       3259243.23756799])), (array([18.15166667, 12.17857143, 16.45916667, 16.60084507, 12.41170213,
         9.67159091, 16.33043478,  9.43978723, 11.10313725, 10.22955556,
        11.57575758, 12.47194444, 12.22138889, 10.36794118,  8.775     ,
        10.46055556, 12.55241379, 11.78611111,  7.89736111,  7.06944444,
@@ -415,16 +420,16 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
        10.9936    , 12.47652778,  3.43633803, 10.0825    ,  9.59677419,
        13.55277778,  6.09319444, 20.58333333, 11.65820513, 14.4926087 ,
         3.14875   , 16.80952381, 12.45724138, 15.76208333, 11.69902778]),), (None,))
-((array([ -9355174.23973406,  -9305731.50511056,  -9378946.06987249,
+((array([ -9355174.23973406,  -9305731.50511057,  -9378946.06987249,
         -9894654.50049513,  -9357159.20186525,  -9310436.24708494,
-        -9176098.20900436,  -9848465.95859632,  -9657890.50782771,
-        -9408987.70828107,  -9592090.92179619,  -9397058.84931958,
+        -9176098.20900436,  -9848465.95859632,  -9657890.50782772,
+        -9408987.70828108,  -9592090.92179619,  -9397058.84931958,
         -9614660.3229513 ,  -9438991.174341  ,  -9220530.82286406,
         -9464280.35533937,  -9148327.82534205,  -9254885.93667311,
         -9284574.48085645,  -9103675.72047743,  -9617332.38735867,
         -9038401.00424027,  -9631570.67341502,  -9133335.63539924,
-        -9125099.95117223,  -9369183.49169843,  -8985427.32736408,
-        -9520794.51755526,  -9397182.90945276,  -8972410.55646536,
+        -9125099.95117224,  -9369183.49169844,  -8985427.32736408,
+        -9520794.51755526,  -9397182.90945277,  -8972410.55646536,
         -9418511.70927591,  -9312192.17512407,  -9633794.21272551,
         -9386466.02256181,  -9298192.46624686, -10151936.13057628,
         -9335849.48821648,  -9334064.93091582,  -8951759.31583123,
@@ -433,7 +438,7 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
         -9332280.37361521,  -8991029.11953241,  -8973832.47645353,
         -9529249.69278712,  -9266070.43483542,  -9429505.34569483,
         -8999875.56133822,  -9322689.57101016,  -9604983.63256177,
-        -9104467.79671247,  -9706970.60513881]), array([2719870.27460582, 2743685.56324252, 2933768.14517002,
+        -9104467.79671248,  -9706970.60513881]), array([2719870.27460582, 2743685.56324252, 2933768.14517002,
        3027361.13101297, 2757426.84021469, 3028296.78889616,
        2903724.5557224 , 3182157.20869187, 3066100.23492454,
        3255225.28091213, 2860584.19616269, 2934171.90242785,
@@ -469,14 +474,8 @@ don’t want to do that for real data. We’ll keep 30% of the data to use for t
 a tuple) and a data array. They are in a format that can be easily passed to the
 <a class="reference internal" href="../api/generated/verde.base.BaseGridder.html#verde.base.BaseGridder.fit" title="verde.base.BaseGridder.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> method of most gridders using Python’s argument
 expansion using the <code class="docutils literal notranslate"><span class="pre">*</span></code> symbol.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chain</span> <span class="o">=</span> <a href="../api/generated/verde.Chain.html#verde.Chain" title="View documentation for verde.Chain"><span class="n">vd</span><span class="o">.</span><span class="n">Chain</span></a><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="p">(</span><span class="s2">&quot;reduce&quot;</span><span class="p">,</span> <a href="../api/generated/verde.BlockReduce.html#verde.BlockReduce" title="View documentation for verde.BlockReduce"><span class="n">vd</span><span class="o">.</span><span class="n">BlockReduce</span></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html#numpy.mean" title="View documentation for numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">,</span> <span class="n">spacing</span> <span class="o">*</span> <span class="mf">111e3</span><span class="p">)),</span>
-        <span class="p">(</span><span class="s2">&quot;trend&quot;</span><span class="p">,</span> <a href="../api/generated/verde.Trend.html#verde.Trend" title="View documentation for verde.Trend"><span class="n">vd</span><span class="o">.</span><span class="n">Trend</span></a><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span>
-        <span class="p">(</span><span class="s2">&quot;spline&quot;</span><span class="p">,</span> <a href="../api/generated/verde.Spline.html#verde.Spline" title="View documentation for verde.Spline"><span class="n">vd</span><span class="o">.</span><span class="n">Spline</span></a><span class="p">()),</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-<span class="n">chain</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">*</span><span class="n">train</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spline</span> <span class="o">=</span> <a href="../api/generated/verde.Spline.html#verde.Spline" title="View documentation for verde.Spline"><span class="n">vd</span><span class="o">.</span><span class="n">Spline</span></a><span class="p">()</span>
+<span class="n">spline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">*</span><span class="n">train</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Let’s plot the gridded result to see what it looks like. We’ll mask out grid points
@@ -487,7 +486,7 @@ that are too far from any given data point.</p>
     <span class="n">coordinates</span><span class="o">=</span><a href="../api/generated/verde.grid_coordinates.html#verde.grid_coordinates" title="View documentation for verde.grid_coordinates"><span class="n">vd</span><span class="o">.</span><span class="n">grid_coordinates</span></a><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="n">spacing</span><span class="p">),</span>
     <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">spline</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">spacing</span><span class="o">=</span><span class="n">spacing</span><span class="p">,</span>
     <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span>
@@ -520,79 +519,108 @@ that are too far from any given data point.</p>
 calculates the <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_determination">R² coefficient of determination</a>
 for a given comparison dataset (<code class="docutils literal notranslate"><span class="pre">test</span></code> in our case). The R² score is at most 1,
 meaning a perfect prediction, but has no lower bound.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="o">*</span><span class="n">test</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">spline</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="o">*</span><span class="n">test</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;R² score:&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>R² score: 0.8455402431145147
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>R² score: 0.8404552995050688
 </pre></div>
 </div>
 <p>That’s a good score meaning that our gridder is able to accurately predict data that
 wasn’t used in the gridding algorithm.</p>
+<p>Once caveat for this score is that it is highly dependent on the particular split that
+we made. Changing the random number generator seed in <a class="reference internal" href="../api/generated/verde.train_test_split.html#verde.train_test_split" title="verde.train_test_split"><code class="xref py py-func docutils literal notranslate"><span class="pre">verde.train_test_split</span></code></a>
+will result in a different score.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use 1 as a seed instead of 0</span>
+<span class="n">train_other</span><span class="p">,</span> <span class="n">test_other</span> <span class="o">=</span> <a href="../api/generated/verde.train_test_split.html#verde.train_test_split" title="View documentation for verde.train_test_split"><span class="n">vd</span><span class="o">.</span><span class="n">train_test_split</span></a><span class="p">(</span>
+    <span class="n">proj_coords</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">air_temperature_c</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;R² score with seed 1:&quot;</span><span class="p">,</span> <span class="n">spline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">*</span><span class="n">train_other</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="o">*</span><span class="n">test_other</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>R² score with seed 1: -1488571.182041767
+</pre></div>
+</div>
+<p>A more robust way of scoring the gridders is to use function
+<a class="reference internal" href="../api/generated/verde.cross_val_score.html#verde.cross_val_score" title="verde.cross_val_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">verde.cross_val_score</span></code></a>, which (by default) uses a <a class="reference external" href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)#k-fold_cross-validation">k-fold cross-validation</a>.
+It will split the data <em>k</em> times and return the score on each <em>fold</em>. We can then take
+a mean of these scores.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <a href="../api/generated/verde.cross_val_score.html#verde.cross_val_score" title="View documentation for verde.cross_val_score"><span class="n">vd</span><span class="o">.</span><span class="n">cross_val_score</span></a><span class="p">(</span><span class="n">spline</span><span class="p">,</span> <span class="n">proj_coords</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">air_temperature_c</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;k-fold scores:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Mean score:&quot;</span><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html#numpy.mean" title="View documentation for numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>k-fold scores: [ 8.21323848e-01 -2.39714577e+02 -5.79433522e+02 -4.23357626e+02
+ -4.32449867e+03]
+Mean score: -1113.2366150788307
+</pre></div>
+</div>
+<p>That is not a very good score so clearly the default arguments for
+<a class="reference internal" href="../api/generated/verde.Spline.html#verde.Spline" title="verde.Spline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spline</span></code></a> aren’t suitable for this dataset. We could try different
+combinations manually until we get a good score. A better way is to do this
+automatically.</p>
 </div>
 <div class="section" id="tuning">
 <h2>Tuning<a class="headerlink" href="#tuning" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../api/generated/verde.Spline.html#verde.Spline" title="verde.Spline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spline</span></code></a> has many parameters that can be set to modify the final result.
 Mainly the <code class="docutils literal notranslate"><span class="pre">damping</span></code> regularization parameter and the <code class="docutils literal notranslate"><span class="pre">mindist</span></code> “fudge factor”
-which smooths the solution. Would changing the default values give us a better score?
-What if we used a 2nd degree trend instead?</p>
-<p>We can answer these questions by changing the values in our <code class="docutils literal notranslate"><span class="pre">chain</span></code> and
-re-evaluating the model score. Let’s test the following combinations of parameters:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dampings</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">]</span>
-<span class="n">mindists</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10e3</span><span class="p">,</span> <span class="mf">100e3</span><span class="p">,</span> <span class="mf">1000e3</span><span class="p">]</span>
-<span class="n">degrees</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+which smooths the solution. Would changing the default values give us a better score?</p>
+<p>We can answer these questions by changing the values in our <code class="docutils literal notranslate"><span class="pre">spline</span></code> and
+re-evaluating the model score repeatedly for different values of these parameters.
+Let’s test the following combinations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dampings</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">]</span>
+<span class="n">mindists</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5e3</span><span class="p">,</span> <span class="mf">10e3</span><span class="p">,</span> <span class="mf">25e3</span><span class="p">,</span> <span class="mf">50e3</span><span class="p">,</span> <span class="mf">75e3</span><span class="p">,</span> <span class="mf">100e3</span><span class="p">]</span>
 
 <span class="c1"># Use itertools to create a list with all combinations of parameters to test</span>
-<span class="n">parameter_sets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">dampings</span><span class="p">,</span> <span class="n">mindists</span><span class="p">,</span> <span class="n">degrees</span><span class="p">))</span>
+<span class="n">parameter_sets</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">damping</span><span class="o">=</span><span class="n">combo</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mindist</span><span class="o">=</span><span class="n">combo</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">combo</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">dampings</span><span class="p">,</span> <span class="n">mindists</span><span class="p">)</span>
+<span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Number of combinations:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">parameter_sets</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Combinations:&quot;</span><span class="p">,</span> <span class="n">parameter_sets</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Number of combinations: 36
-Combinations: [(None, 10000.0, 1), (None, 10000.0, 2), (None, 10000.0, 3), (None, 10000.0, 4), (None, 100000.0, 1), (None, 100000.0, 2), (None, 100000.0, 3), (None, 100000.0, 4), (None, 1000000.0, 1), (None, 1000000.0, 2), (None, 1000000.0, 3), (None, 1000000.0, 4), (1e-08, 10000.0, 1), (1e-08, 10000.0, 2), (1e-08, 10000.0, 3), (1e-08, 10000.0, 4), (1e-08, 100000.0, 1), (1e-08, 100000.0, 2), (1e-08, 100000.0, 3), (1e-08, 100000.0, 4), (1e-08, 1000000.0, 1), (1e-08, 1000000.0, 2), (1e-08, 1000000.0, 3), (1e-08, 1000000.0, 4), (1e-06, 10000.0, 1), (1e-06, 10000.0, 2), (1e-06, 10000.0, 3), (1e-06, 10000.0, 4), (1e-06, 100000.0, 1), (1e-06, 100000.0, 2), (1e-06, 100000.0, 3), (1e-06, 100000.0, 4), (1e-06, 1000000.0, 1), (1e-06, 1000000.0, 2), (1e-06, 1000000.0, 3), (1e-06, 1000000.0, 4)]
+Combinations: [{&#39;damping&#39;: None, &#39;mindist&#39;: 5000.0}, {&#39;damping&#39;: None, &#39;mindist&#39;: 10000.0}, {&#39;damping&#39;: None, &#39;mindist&#39;: 25000.0}, {&#39;damping&#39;: None, &#39;mindist&#39;: 50000.0}, {&#39;damping&#39;: None, &#39;mindist&#39;: 75000.0}, {&#39;damping&#39;: None, &#39;mindist&#39;: 100000.0}, {&#39;damping&#39;: 1e-05, &#39;mindist&#39;: 5000.0}, {&#39;damping&#39;: 1e-05, &#39;mindist&#39;: 10000.0}, {&#39;damping&#39;: 1e-05, &#39;mindist&#39;: 25000.0}, {&#39;damping&#39;: 1e-05, &#39;mindist&#39;: 50000.0}, {&#39;damping&#39;: 1e-05, &#39;mindist&#39;: 75000.0}, {&#39;damping&#39;: 1e-05, &#39;mindist&#39;: 100000.0}, {&#39;damping&#39;: 0.0001, &#39;mindist&#39;: 5000.0}, {&#39;damping&#39;: 0.0001, &#39;mindist&#39;: 10000.0}, {&#39;damping&#39;: 0.0001, &#39;mindist&#39;: 25000.0}, {&#39;damping&#39;: 0.0001, &#39;mindist&#39;: 50000.0}, {&#39;damping&#39;: 0.0001, &#39;mindist&#39;: 75000.0}, {&#39;damping&#39;: 0.0001, &#39;mindist&#39;: 100000.0}, {&#39;damping&#39;: 0.001, &#39;mindist&#39;: 5000.0}, {&#39;damping&#39;: 0.001, &#39;mindist&#39;: 10000.0}, {&#39;damping&#39;: 0.001, &#39;mindist&#39;: 25000.0}, {&#39;damping&#39;: 0.001, &#39;mindist&#39;: 50000.0}, {&#39;damping&#39;: 0.001, &#39;mindist&#39;: 75000.0}, {&#39;damping&#39;: 0.001, &#39;mindist&#39;: 100000.0}, {&#39;damping&#39;: 0.01, &#39;mindist&#39;: 5000.0}, {&#39;damping&#39;: 0.01, &#39;mindist&#39;: 10000.0}, {&#39;damping&#39;: 0.01, &#39;mindist&#39;: 25000.0}, {&#39;damping&#39;: 0.01, &#39;mindist&#39;: 50000.0}, {&#39;damping&#39;: 0.01, &#39;mindist&#39;: 75000.0}, {&#39;damping&#39;: 0.01, &#39;mindist&#39;: 100000.0}, {&#39;damping&#39;: 0.1, &#39;mindist&#39;: 5000.0}, {&#39;damping&#39;: 0.1, &#39;mindist&#39;: 10000.0}, {&#39;damping&#39;: 0.1, &#39;mindist&#39;: 25000.0}, {&#39;damping&#39;: 0.1, &#39;mindist&#39;: 50000.0}, {&#39;damping&#39;: 0.1, &#39;mindist&#39;: 75000.0}, {&#39;damping&#39;: 0.1, &#39;mindist&#39;: 100000.0}]
 </pre></div>
 </div>
 <p>Now we can loop over the combinations and collect the scores for each parameter set.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">damping</span><span class="p">,</span> <span class="n">mindist</span><span class="p">,</span> <span class="n">degree</span> <span class="ow">in</span> <span class="n">parameter_sets</span><span class="p">:</span>
-    <span class="n">chain</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">&quot;spline&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">damping</span><span class="o">=</span><span class="n">damping</span><span class="p">,</span> <span class="n">mindist</span><span class="o">=</span><span class="n">mindist</span><span class="p">)</span>
-    <span class="n">chain</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">&quot;trend&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">degree</span><span class="p">)</span>
-    <span class="n">score</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">*</span><span class="n">train</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="o">*</span><span class="n">test</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">parameter_sets</span><span class="p">:</span>
+    <span class="n">spline</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html#numpy.mean" title="View documentation for numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a href="../api/generated/verde.cross_val_score.html#verde.cross_val_score" title="View documentation for verde.cross_val_score"><span class="n">vd</span><span class="o">.</span><span class="n">cross_val_score</span></a><span class="p">(</span><span class="n">spline</span><span class="p">,</span> <span class="n">proj_coords</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">air_temperature_c</span><span class="p">))</span>
     <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0.7238830882948778, 0.7070997586206689, 0.7116974741133548, 0.835520713633455, 0.8625010250415488, 0.8595635581413851, 0.8684356255592645, 0.7631365453481721, 0.8615410794928415, 0.8586131408040465, 0.8673084289960231, 0.7607537666919757, 0.7373989600869302, 0.7232203900028109, 0.7272994871275096, 0.8314180171256178, 0.8625010077531293, 0.859563439599696, 0.8684355655218092, 0.7631370162897471, 0.86154107703677, 0.8586131345966481, 0.867308425535158, 0.7607537860409452, 0.8276826542755779, 0.829235588378251, 0.8305543978203218, 0.7111395294785402, 0.8624996340299229, 0.8595521447989407, 0.8684300027906402, 0.7631832523172081, 0.8615408365379406, 0.858612523140056, 0.8673080855836129, 0.7607556993413502]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[-53.066723364487515, -4249.188046276299, -9590.195015062827, -21071.1052278887, -94103.92308160572, -143981.25416808063, 0.8349969042581897, 0.8315894974820374, 0.7246117999415764, 0.6467284754898814, 0.5583928223695406, 0.4842211345998549, 0.8334559133350801, 0.8326858335830201, 0.8352997464476344, 0.8089468577360373, 0.7684028947861039, 0.7338656615457143, 0.8368997829406484, 0.8397611283810636, 0.8351341828009418, 0.848333995539333, 0.8431962588453489, 0.835740173124708, 0.8387058391493969, 0.8290571981392993, 0.8206030393164714, 0.8445686445793811, 0.846136826117404, 0.8467460998266974, 0.8181682632895206, 0.8116978646112909, 0.801600938661025, 0.8356710145558267, 0.8416453396753987, 0.843115395081486]
 </pre></div>
 </div>
 <p>The largest score will yield the best parameter combination.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">best</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html#numpy.argmax" title="View documentation for numpy.argmax"><span class="n">np</span><span class="o">.</span><span class="n">argmax</span></a><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Best score:&quot;</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="n">best</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Best damping, mindist, and degree:&quot;</span><span class="p">,</span> <span class="n">parameter_sets</span><span class="p">[</span><span class="n">best</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Best parameters:&quot;</span><span class="p">,</span> <span class="n">parameter_sets</span><span class="p">[</span><span class="n">best</span><span class="p">])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Best score: 0.8684356255592645
-Best damping, mindist, and degree: (None, 100000.0, 3)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Best score: 0.848333995539333
+Best parameters: {&#39;damping&#39;: 0.001, &#39;mindist&#39;: 50000.0}
 </pre></div>
 </div>
-<p>We managed to get a slightly better score using the above configuration. That’s not a
-huge improvement but we also haven’t tried that many parameter combinations.</p>
-<p>We can now configure our chain with the best configuration and re-fit. We could also
-have kept separate chains, each fit on a combination, to avoid having to fit again.
-Since this is a small dataset, it doesn’t matter too much.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">damping</span><span class="p">,</span> <span class="n">mindist</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="n">parameter_sets</span><span class="p">[</span><span class="n">best</span><span class="p">]</span>
-<span class="n">chain</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">&quot;spline&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">damping</span><span class="o">=</span><span class="n">damping</span><span class="p">,</span> <span class="n">mindist</span><span class="o">=</span><span class="n">mindist</span><span class="p">)</span>
-<span class="n">chain</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">&quot;trend&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">degree</span><span class="p">)</span>
-<span class="n">chain</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">*</span><span class="n">train</span><span class="p">)</span>
+<p>That is a big improvement over our previous score!</p>
+<p>We can now configure our spline with the best configuration and re-fit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spline</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="n">parameter_sets</span><span class="p">[</span><span class="n">best</span><span class="p">])</span>
+<span class="n">spline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">proj_coords</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">air_temperature_c</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Finally, we can make a grid with the best configuration to see how it compares to our
 previous result.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid_best</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid_best</span> <span class="o">=</span> <span class="n">spline</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
     <span class="n">spacing</span><span class="o">=</span><span class="n">spacing</span><span class="p">,</span>
     <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span>
@@ -626,7 +654,7 @@ previous result.</p>
 <p>Notice that, for sparse data like these, smoother models tend to be better predictors.
 This is a sign that you should probably not trust many of the short wavelength
 features that we get from the defaults.</p>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  10.968 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  2.438 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-model-selection-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../_downloads/fd6e78bedaa261b386d9f69b0fce645c/model_selection.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">model_selection.py</span></code></a></div>
@@ -658,7 +686,7 @@ features that we get from the defaults.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+      Last updated on Dec 19, 2018.
 
     </p>
   </div>
@@ -684,6 +712,7 @@ features that we get from the defaults.</p>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
 
   

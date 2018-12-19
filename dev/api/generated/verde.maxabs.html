@@ -134,7 +134,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#datasets">Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes-and-functions">Base Classes and Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
@@ -252,12 +252,17 @@
 .admonition > p:before {
     margin-right: 4px;  /* make room for the exclamation icon */
 }
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
 </style>
 <div class="section" id="verde-maxabs">
 <h1>verde.maxabs<a class="headerlink" href="#verde-maxabs" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="verde.maxabs">
-<code class="descclassname">verde.</code><code class="descname">maxabs</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/verde/utils.html#maxabs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#verde.maxabs" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">verde.</code><code class="descname">maxabs</code><span class="sig-paren">(</span><em>*args</em>, <em>nan=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/verde/utils.html#maxabs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#verde.maxabs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the maximum absolute value of the given array(s).</p>
 <p>Use this to set the limits of your colorbars and center them on zero.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -286,6 +291,15 @@ calculated across all arrays.</p>
 <span class="go">25</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">maxabs</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">500</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">300</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">499</span><span class="p">))</span>
 <span class="go">500.0</span>
+</pre></div>
+</div>
+<p>If the array contains NaNs, we’ll use the <code class="docutils literal notranslate"><span class="pre">nan</span></code> version of of the numpy functions
+by default. You can turn this off through the <em>nan</em> argument.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">maxabs</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span>
+<span class="go">25.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">maxabs</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">),</span> <span class="n">nan</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">nan</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -352,7 +366,7 @@ calculated across all arrays.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+      Last updated on Dec 19, 2018.
 
     </p>
   </div>
@@ -378,6 +392,7 @@ calculated across all arrays.</p>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
 
   

@@ -99,8 +99,8 @@ don't want to do that for real data. We'll keep 30% of the data to use for testi
 
  .. code-block:: none
 
-    ((array([ -9471409.04145469,  -9242651.69892226,  -9518618.69368064,
-            -9226352.10603726,  -9196090.97662381,  -9211980.21676049,
+    ((array([ -9471409.04145469,  -9242651.69892227,  -9518618.69368064,
+            -9226352.10603726,  -9196090.97662382,  -9211980.21676049,
             -9111443.79343314,  -9285738.73749109,  -9261270.26198931,
             -9322307.84752338,  -9449918.0091497 ,  -9210462.8659006 ,
             -9437254.33247619,  -9336002.17761117,  -9770852.03064925,
@@ -111,17 +111,17 @@ don't want to do that for real data. We'll keep 30% of the data to use for testi
             -9295711.26358295,  -9407680.30533891,  -9409483.94881389,
             -9113314.23851832,  -9581641.24134595,  -9051780.41245142,
             -9151620.1904154 ,  -9526253.16341599,  -9370920.33356321,
-            -9422548.43514848,  -9363887.07831951,  -9926719.2733836 ,
+            -9422548.43514849,  -9363887.07831951,  -9926719.2733836 ,
             -9263865.98169933, -10151535.32091524,  -9105488.90703955,
             -9399024.72527645,  -9275584.89274308,  -9287132.02821771,
             -9254036.60191507,  -9356519.81502485,  -9300826.35830558,
-            -9088836.21992941,  -9329331.55967991,  -9705882.69320157,
+            -9088836.21992941,  -9329331.55967992,  -9705882.69320157,
             -9544881.26957023,  -9339151.39637705,  -9260420.92723128,
             -9092882.48888909,  -9202923.82703691,  -9252023.01052236,
             -9250143.02235004,  -9110031.41653215,  -9210586.92603379,
             -9192082.88001273,  -9144987.74483283,  -9265793.68530754,
             -9038200.59940965,  -9241182.06349818,  -9289031.10256449,
-            -9405189.55958775,  -9354792.51624734,  -9330810.73819114,
+            -9405189.55958776,  -9354792.51624734,  -9330810.73819114,
             -9321372.62498082,  -9228556.55917335,  -9199536.03109192,
             -9278581.42211417,  -9229978.47916156,  -9319244.51654206,
             -9297171.35591977,  -9275775.75448643,  -9559682.59776963,
@@ -135,16 +135,16 @@ don't want to do that for real data. We'll keep 30% of the data to use for testi
             -9878049.52882075,  -9261222.54655341,  -9959308.91606633,
             -9374995.23178449,  -9324979.91193078, -10002090.57584577,
             -9291378.70200816,  -9717038.56210237,  -9108943.50459486,
-            -9187130.01777196,  -9178474.43770947,  -9821430.39264604,
+            -9187130.01777197,  -9178474.43770947,  -9821430.39264604,
             -9676089.17505937,  -9590325.45066986,  -9334752.033192  ,
             -9349658.33535029,  -9217667.89671333,  -9192989.47329381,
             -9735189.51389807,  -9062249.17907602,  -9332852.95884533,
-            -9455815.63702027,  -9796236.64251932,  -9443505.05457202,
-            -9320723.69505337,  -9754266.14514927,  -9765097.54908629,
+            -9455815.63702027,  -9796236.64251933,  -9443505.05457202,
+            -9320723.69505337,  -9754266.14514928,  -9765097.54908629,
             -9081077.6900608 ,  -9042075.09280036,  -9433427.55452137,
             -9587615.21391383]), array([2657710.28293861, 3302077.73567252, 2899046.15133399,
            2838589.68737716, 3049850.71722841, 3290767.45780106,
-           2931160.45084784, 3271137.71227972, 3285325.92731206,
+           2931160.45084785, 3271137.71227972, 3285325.92731206,
            3104893.52310543, 3247812.59589509, 3166662.55342553,
            3287606.04132201, 3103141.68482877, 3197876.76156001,
            3149242.24908431, 3067381.83156894, 3400585.90023853,
@@ -169,7 +169,7 @@ don't want to do that for real data. We'll keep 30% of the data to use for testi
            3164074.94938398, 3271836.50108902, 2579123.45324659,
            2545954.59014788, 3342747.49976745, 2979356.30060547,
            3009203.6131726 , 2719110.10495866, 2846814.97160994,
-           3188985.42191104, 2983466.36042869, 3294675.45126596,
+           3188985.42191105, 2983466.36042869, 3294675.45126596,
            3039773.54716658, 3071437.56540843, 3483134.04990316,
            3294607.6695262 , 3667917.1194501 , 3619924.68699415,
            2573548.51452294, 2821249.74463368, 2683074.91768678,
@@ -183,9 +183,9 @@ don't want to do that for real data. We'll keep 30% of the data to use for testi
            2573738.88783378, 3339785.07776942, 3063935.13249589,
            3648601.05705207, 3330211.5352512 , 3142162.17467495,
            2982622.30031315, 3282673.97488324, 3183676.67838886,
-           3006522.74236789, 2990221.2234946 , 3532083.29147308,
+           3006522.74236789, 2990221.2234946 , 3532083.29147309,
            2942206.50247381, 3121339.67312345, 2913261.59698676,
-           3259243.23756798])), (array([18.15166667, 12.17857143, 16.45916667, 16.60084507, 12.41170213,
+           3259243.23756799])), (array([18.15166667, 12.17857143, 16.45916667, 16.60084507, 12.41170213,
             9.67159091, 16.33043478,  9.43978723, 11.10313725, 10.22955556,
            11.57575758, 12.47194444, 12.22138889, 10.36794118,  8.775     ,
            10.46055556, 12.55241379, 11.78611111,  7.89736111,  7.06944444,
@@ -211,16 +211,16 @@ don't want to do that for real data. We'll keep 30% of the data to use for testi
            10.9936    , 12.47652778,  3.43633803, 10.0825    ,  9.59677419,
            13.55277778,  6.09319444, 20.58333333, 11.65820513, 14.4926087 ,
             3.14875   , 16.80952381, 12.45724138, 15.76208333, 11.69902778]),), (None,))
-    ((array([ -9355174.23973406,  -9305731.50511056,  -9378946.06987249,
+    ((array([ -9355174.23973406,  -9305731.50511057,  -9378946.06987249,
             -9894654.50049513,  -9357159.20186525,  -9310436.24708494,
-            -9176098.20900436,  -9848465.95859632,  -9657890.50782771,
-            -9408987.70828107,  -9592090.92179619,  -9397058.84931958,
+            -9176098.20900436,  -9848465.95859632,  -9657890.50782772,
+            -9408987.70828108,  -9592090.92179619,  -9397058.84931958,
             -9614660.3229513 ,  -9438991.174341  ,  -9220530.82286406,
             -9464280.35533937,  -9148327.82534205,  -9254885.93667311,
             -9284574.48085645,  -9103675.72047743,  -9617332.38735867,
             -9038401.00424027,  -9631570.67341502,  -9133335.63539924,
-            -9125099.95117223,  -9369183.49169843,  -8985427.32736408,
-            -9520794.51755526,  -9397182.90945276,  -8972410.55646536,
+            -9125099.95117224,  -9369183.49169844,  -8985427.32736408,
+            -9520794.51755526,  -9397182.90945277,  -8972410.55646536,
             -9418511.70927591,  -9312192.17512407,  -9633794.21272551,
             -9386466.02256181,  -9298192.46624686, -10151936.13057628,
             -9335849.48821648,  -9334064.93091582,  -8951759.31583123,
@@ -229,7 +229,7 @@ don't want to do that for real data. We'll keep 30% of the data to use for testi
             -9332280.37361521,  -8991029.11953241,  -8973832.47645353,
             -9529249.69278712,  -9266070.43483542,  -9429505.34569483,
             -8999875.56133822,  -9322689.57101016,  -9604983.63256177,
-            -9104467.79671247,  -9706970.60513881]), array([2719870.27460582, 2743685.56324252, 2933768.14517002,
+            -9104467.79671248,  -9706970.60513881]), array([2719870.27460582, 2743685.56324252, 2933768.14517002,
            3027361.13101297, 2757426.84021469, 3028296.78889616,
            2903724.5557224 , 3182157.20869187, 3066100.23492454,
            3255225.28091213, 2860584.19616269, 2934171.90242785,
@@ -271,14 +271,8 @@ expansion using the ``*`` symbol.
 .. code-block:: python
 
 
-    chain = vd.Chain(
-        [
-            ("reduce", vd.BlockReduce(np.mean, spacing * 111e3)),
-            ("trend", vd.Trend(degree=1)),
-            ("spline", vd.Spline()),
-        ]
-    )
-    chain.fit(*train)
+    spline = vd.Spline()
+    spline.fit(*train)
 
 
 
@@ -299,7 +293,7 @@ that are too far from any given data point.
         coordinates=vd.grid_coordinates(region, spacing=spacing),
         projection=projection,
     )
-    grid = chain.grid(
+    grid = spline.grid(
         region=region,
         spacing=spacing,
         projection=projection,
@@ -346,7 +340,7 @@ meaning a perfect prediction, but has no lower bound.
 .. code-block:: python
 
 
-    score = chain.score(*test)
+    score = spline.score(*test)
     print("R² score:", score)
 
 
@@ -359,11 +353,75 @@ meaning a perfect prediction, but has no lower bound.
 
  .. code-block:: none
 
-    R² score: 0.8455402431145147
+    R² score: 0.8404552995050688
 
 
 That's a good score meaning that our gridder is able to accurately predict data that
 wasn't used in the gridding algorithm.
+
+Once caveat for this score is that it is highly dependent on the particular split that
+we made. Changing the random number generator seed in :func:`verde.train_test_split`
+will result in a different score.
+
+
+
+.. code-block:: python
+
+
+    # Use 1 as a seed instead of 0
+    train_other, test_other = vd.train_test_split(
+        proj_coords, data.air_temperature_c, test_size=0.3, random_state=1
+    )
+    print("R² score with seed 1:", spline.fit(*train_other).score(*test_other))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    R² score with seed 1: -1488571.182041767
+
+
+A more robust way of scoring the gridders is to use function
+:func:`verde.cross_val_score`, which (by default) uses a `k-fold cross-validation
+<https://en.wikipedia.org/wiki/Cross-validation_(statistics)#k-fold_cross-validation>`__.
+It will split the data *k* times and return the score on each *fold*. We can then take
+a mean of these scores.
+
+
+
+.. code-block:: python
+
+
+    scores = vd.cross_val_score(spline, proj_coords, data.air_temperature_c)
+    print("k-fold scores:", scores)
+    print("Mean score:", np.mean(scores))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    k-fold scores: [ 8.21323848e-01 -2.39714577e+02 -5.79433522e+02 -4.23357626e+02
+     -4.32449867e+03]
+    Mean score: -1113.2366150788307
+
+
+That is not a very good score so clearly the default arguments for
+:class:`~verde.Spline` aren't suitable for this dataset. We could try different
+combinations manually until we get a good score. A better way is to do this
+automatically.
+
 
 Tuning
 ------
@@ -371,22 +429,24 @@ Tuning
 :class:`~verde.Spline` has many parameters that can be set to modify the final result.
 Mainly the ``damping`` regularization parameter and the ``mindist`` "fudge factor"
 which smooths the solution. Would changing the default values give us a better score?
-What if we used a 2nd degree trend instead?
 
-We can answer these questions by changing the values in our ``chain`` and
-re-evaluating the model score. Let's test the following combinations of parameters:
+We can answer these questions by changing the values in our ``spline`` and
+re-evaluating the model score repeatedly for different values of these parameters.
+Let's test the following combinations:
 
 
 
 .. code-block:: python
 
 
-    dampings = [None, 1e-8, 1e-6]
-    mindists = [10e3, 100e3, 1000e3]
-    degrees = [1, 2, 3, 4]
+    dampings = [None, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1]
+    mindists = [5e3, 10e3, 25e3, 50e3, 75e3, 100e3]
 
     # Use itertools to create a list with all combinations of parameters to test
-    parameter_sets = list(itertools.product(dampings, mindists, degrees))
+    parameter_sets = [
+        dict(damping=combo[0], mindist=combo[1])
+        for combo in itertools.product(dampings, mindists)
+    ]
     print("Number of combinations:", len(parameter_sets))
     print("Combinations:", parameter_sets)
 
@@ -401,7 +461,7 @@ re-evaluating the model score. Let's test the following combinations of paramete
  .. code-block:: none
 
     Number of combinations: 36
-    Combinations: [(None, 10000.0, 1), (None, 10000.0, 2), (None, 10000.0, 3), (None, 10000.0, 4), (None, 100000.0, 1), (None, 100000.0, 2), (None, 100000.0, 3), (None, 100000.0, 4), (None, 1000000.0, 1), (None, 1000000.0, 2), (None, 1000000.0, 3), (None, 1000000.0, 4), (1e-08, 10000.0, 1), (1e-08, 10000.0, 2), (1e-08, 10000.0, 3), (1e-08, 10000.0, 4), (1e-08, 100000.0, 1), (1e-08, 100000.0, 2), (1e-08, 100000.0, 3), (1e-08, 100000.0, 4), (1e-08, 1000000.0, 1), (1e-08, 1000000.0, 2), (1e-08, 1000000.0, 3), (1e-08, 1000000.0, 4), (1e-06, 10000.0, 1), (1e-06, 10000.0, 2), (1e-06, 10000.0, 3), (1e-06, 10000.0, 4), (1e-06, 100000.0, 1), (1e-06, 100000.0, 2), (1e-06, 100000.0, 3), (1e-06, 100000.0, 4), (1e-06, 1000000.0, 1), (1e-06, 1000000.0, 2), (1e-06, 1000000.0, 3), (1e-06, 1000000.0, 4)]
+    Combinations: [{'damping': None, 'mindist': 5000.0}, {'damping': None, 'mindist': 10000.0}, {'damping': None, 'mindist': 25000.0}, {'damping': None, 'mindist': 50000.0}, {'damping': None, 'mindist': 75000.0}, {'damping': None, 'mindist': 100000.0}, {'damping': 1e-05, 'mindist': 5000.0}, {'damping': 1e-05, 'mindist': 10000.0}, {'damping': 1e-05, 'mindist': 25000.0}, {'damping': 1e-05, 'mindist': 50000.0}, {'damping': 1e-05, 'mindist': 75000.0}, {'damping': 1e-05, 'mindist': 100000.0}, {'damping': 0.0001, 'mindist': 5000.0}, {'damping': 0.0001, 'mindist': 10000.0}, {'damping': 0.0001, 'mindist': 25000.0}, {'damping': 0.0001, 'mindist': 50000.0}, {'damping': 0.0001, 'mindist': 75000.0}, {'damping': 0.0001, 'mindist': 100000.0}, {'damping': 0.001, 'mindist': 5000.0}, {'damping': 0.001, 'mindist': 10000.0}, {'damping': 0.001, 'mindist': 25000.0}, {'damping': 0.001, 'mindist': 50000.0}, {'damping': 0.001, 'mindist': 75000.0}, {'damping': 0.001, 'mindist': 100000.0}, {'damping': 0.01, 'mindist': 5000.0}, {'damping': 0.01, 'mindist': 10000.0}, {'damping': 0.01, 'mindist': 25000.0}, {'damping': 0.01, 'mindist': 50000.0}, {'damping': 0.01, 'mindist': 75000.0}, {'damping': 0.01, 'mindist': 100000.0}, {'damping': 0.1, 'mindist': 5000.0}, {'damping': 0.1, 'mindist': 10000.0}, {'damping': 0.1, 'mindist': 25000.0}, {'damping': 0.1, 'mindist': 50000.0}, {'damping': 0.1, 'mindist': 75000.0}, {'damping': 0.1, 'mindist': 100000.0}]
 
 
 Now we can loop over the combinations and collect the scores for each parameter set.
@@ -412,10 +472,9 @@ Now we can loop over the combinations and collect the scores for each parameter 
 
 
     scores = []
-    for damping, mindist, degree in parameter_sets:
-        chain.named_steps["spline"].set_params(damping=damping, mindist=mindist)
-        chain.named_steps["trend"].set_params(degree=degree)
-        score = chain.fit(*train).score(*test)
+    for params in parameter_sets:
+        spline.set_params(**params)
+        score = np.mean(vd.cross_val_score(spline, proj_coords, data.air_temperature_c))
         scores.append(score)
     print(scores)
 
@@ -429,7 +488,7 @@ Now we can loop over the combinations and collect the scores for each parameter 
 
  .. code-block:: none
 
-    [0.7238830882948778, 0.7070997586206689, 0.7116974741133548, 0.835520713633455, 0.8625010250415488, 0.8595635581413851, 0.8684356255592645, 0.7631365453481721, 0.8615410794928415, 0.8586131408040465, 0.8673084289960231, 0.7607537666919757, 0.7373989600869302, 0.7232203900028109, 0.7272994871275096, 0.8314180171256178, 0.8625010077531293, 0.859563439599696, 0.8684355655218092, 0.7631370162897471, 0.86154107703677, 0.8586131345966481, 0.867308425535158, 0.7607537860409452, 0.8276826542755779, 0.829235588378251, 0.8305543978203218, 0.7111395294785402, 0.8624996340299229, 0.8595521447989407, 0.8684300027906402, 0.7631832523172081, 0.8615408365379406, 0.858612523140056, 0.8673080855836129, 0.7607556993413502]
+    [-53.066723364487515, -4249.188046276299, -9590.195015062827, -21071.1052278887, -94103.92308160572, -143981.25416808063, 0.8349969042581897, 0.8315894974820374, 0.7246117999415764, 0.6467284754898814, 0.5583928223695406, 0.4842211345998549, 0.8334559133350801, 0.8326858335830201, 0.8352997464476344, 0.8089468577360373, 0.7684028947861039, 0.7338656615457143, 0.8368997829406484, 0.8397611283810636, 0.8351341828009418, 0.848333995539333, 0.8431962588453489, 0.835740173124708, 0.8387058391493969, 0.8290571981392993, 0.8206030393164714, 0.8445686445793811, 0.846136826117404, 0.8467460998266974, 0.8181682632895206, 0.8116978646112909, 0.801600938661025, 0.8356710145558267, 0.8416453396753987, 0.843115395081486]
 
 
 The largest score will yield the best parameter combination.
@@ -441,7 +500,7 @@ The largest score will yield the best parameter combination.
 
     best = np.argmax(scores)
     print("Best score:", scores[best])
-    print("Best damping, mindist, and degree:", parameter_sets[best])
+    print("Best parameters:", parameter_sets[best])
 
 
 
@@ -453,26 +512,21 @@ The largest score will yield the best parameter combination.
 
  .. code-block:: none
 
-    Best score: 0.8684356255592645
-    Best damping, mindist, and degree: (None, 100000.0, 3)
+    Best score: 0.848333995539333
+    Best parameters: {'damping': 0.001, 'mindist': 50000.0}
 
 
-We managed to get a slightly better score using the above configuration. That's not a
-huge improvement but we also haven't tried that many parameter combinations.
+That is a big improvement over our previous score!
 
-We can now configure our chain with the best configuration and re-fit. We could also
-have kept separate chains, each fit on a combination, to avoid having to fit again.
-Since this is a small dataset, it doesn't matter too much.
+We can now configure our spline with the best configuration and re-fit.
 
 
 
 .. code-block:: python
 
 
-    damping, mindist, degree = parameter_sets[best]
-    chain.named_steps["spline"].set_params(damping=damping, mindist=mindist)
-    chain.named_steps["trend"].set_params(degree=degree)
-    chain.fit(*train)
+    spline.set_params(**parameter_sets[best])
+    spline.fit(proj_coords, data.air_temperature_c)
 
 
 
@@ -488,7 +542,7 @@ previous result.
 .. code-block:: python
 
 
-    grid_best = chain.grid(
+    grid_best = spline.grid(
         region=region,
         spacing=spacing,
         projection=projection,
@@ -531,7 +585,7 @@ This is a sign that you should probably not trust many of the short wavelength
 features that we get from the defaults.
 
 
-**Total running time of the script:** ( 0 minutes  10.968 seconds)
+**Total running time of the script:** ( 0 minutes  2.438 seconds)
 
 
 .. _sphx_glr_download_tutorials_model_selection.py:

@@ -74,9 +74,9 @@ longitude and latitude and return easting and northing coordinates.
 
  .. code-block:: none
 
-    (array([-11749316.65303045, -11748999.90777981, -11748682.14077028, ...,
-           -11749178.71558258, -11749531.2223938 , -11749882.70744612]), array([2905766.05183735, 2905457.83817751, 2905148.48639437, ...,
-           2579612.89349502, 2580017.48641078, 2580422.09116872]))
+    (array([-11749316.65303046, -11748999.90777981, -11748682.14077029, ...,
+           -11749178.71558259, -11749531.22239381, -11749882.70744613]), array([2905766.05183735, 2905457.83817751, 2905148.48639437, ...,
+           2579612.89349502, 2580017.48641078, 2580422.09116873]))
 
 
 We can plot our projected coordinates using matplotlib.
@@ -293,7 +293,7 @@ Now we can use the Cartopy library to plot our geographic grid.
 
 
 
-**Total running time of the script:** ( 0 minutes  9.046 seconds)
+**Total running time of the script:** ( 0 minutes  3.346 seconds)
 
 
 .. _sphx_glr_download_tutorials_projections.py:

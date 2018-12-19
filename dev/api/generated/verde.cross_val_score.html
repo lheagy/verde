@@ -122,13 +122,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../index.html#composite-estimators">Composite Estimators</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#model-selection">Model Selection</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="verde.train_test_split.html">verde.train_test_split</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">verde.cross_val_score</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">verde.cross_val_score</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#examples-using-verde-cross-val-score">Examples using <code class="docutils literal notranslate"><span class="pre">verde.cross_val_score</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#coordinate-manipulation">Coordinate Manipulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#utilities">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#datasets">Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes">Base Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#base-classes-and-functions">Base Classes and Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
@@ -246,6 +249,11 @@
 .admonition > p:before {
     margin-right: 4px;  /* make room for the exclamation icon */
 }
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
 </style>
 <div class="section" id="verde-cross-val-score">
 <h1>verde.cross_val_score<a class="headerlink" href="#verde-cross-val-score" title="Permalink to this headline">¶</a></h1>
@@ -253,9 +261,9 @@
 <dt id="verde.cross_val_score">
 <code class="descclassname">verde.</code><code class="descname">cross_val_score</code><span class="sig-paren">(</span><em>estimator</em>, <em>coordinates</em>, <em>data</em>, <em>weights=None</em>, <em>cv=None</em>, <em>client=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/verde/model_selection.html#cross_val_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#verde.cross_val_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Score an estimator/gridder using cross-validation.</p>
-<p>Similar to <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score" title="(in scikit-learn v0.20.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.model_selection.cross_val_score</span></code></a> but modified to
+<p>Similar to <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score" title="(in scikit-learn v0.20.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.model_selection.cross_val_score</span></code></a> but modified to
 accept spatial multi-component data with weights.</p>
-<p>By default, will use <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="(in scikit-learn v0.20.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.model_selection.KFold</span></code></a> to split the
+<p>By default, will use <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="(in scikit-learn v0.20.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.model_selection.KFold</span></code></a> to split the
 dataset. Another cross-validation class can be passed in through the <em>cv</em>
 argument.</p>
 <p>Can optionally run in parallel using <a class="reference external" href="https://dask.pydata.org/">dask</a>.
@@ -288,7 +296,7 @@ each data component (if not none).</p>
 </dd>
 <dt><strong>cv</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or cross-validation generator</span></dt>
 <dd><p class="first last">Any scikit-learn cross-validation generator. Defaults to
-<a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="(in scikit-learn v0.20.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.model_selection.KFold</span></code></a>.</p>
+<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" title="(in scikit-learn v0.20.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.model_selection.KFold</span></code></a>.</p>
 </dd>
 <dt><strong>client</strong> <span class="classifier-delimiter">:</span> <span class="classifier">None or dask.distributed.Client</span></dt>
 <dd><p class="first last">If None, then computations are run serially. Otherwise, should be a
@@ -299,8 +307,8 @@ dask cluster.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>scores</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">List of scores for each split of the cross-validation generator. If
+<dt><strong>scores</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
+<dd><p class="first last">Array of scores for each split of the cross-validation generator. If
 <em>client</em> is not None, then the scores will be futures.</p>
 </dd>
 </dl>
@@ -335,7 +343,14 @@ dask cluster.</p>
 </div>
 </dd></dl>
 
-<div style='clear:both'></div></div>
+<div class="section" id="examples-using-verde-cross-val-score">
+<h2>Examples using <code class="docutils literal notranslate"><span class="pre">verde.cross_val_score</span></code><a class="headerlink" href="#examples-using-verde-cross-val-score" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="The Green&#x27;s functions based interpolations in Verde are all linear regressions under the hood. ..."><div class="figure" id="id1">
+<img alt="../../_images/sphx_glr_model_selection_thumb.png" src="../../_images/sphx_glr_model_selection_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/model_selection.html#sphx-glr-tutorials-model-selection-py"><span class="std std-ref">Model Selection</span></a></span></p>
+</div>
+</div><div style='clear:both'></div></div>
+</div>
 
 
            </div>
@@ -358,7 +373,7 @@ dask cluster.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+      Last updated on Dec 19, 2018.
 
     </p>
   </div>
@@ -384,6 +399,7 @@ dask cluster.</p>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
 
   

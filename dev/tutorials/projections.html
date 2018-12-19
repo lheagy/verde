@@ -237,6 +237,11 @@
 .admonition > p:before {
     margin-right: 4px;  /* make room for the exclamation icon */
 }
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
 </style>
 <div class="sphx-glr-download-link-note admonition note">
 <p class="first admonition-title">Note</p>
@@ -273,9 +278,9 @@ longitude and latitude and return easting and northing coordinates.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(array([-11749316.65303045, -11748999.90777981, -11748682.14077028, ...,
-       -11749178.71558258, -11749531.2223938 , -11749882.70744612]), array([2905766.05183735, 2905457.83817751, 2905148.48639437, ...,
-       2579612.89349502, 2580017.48641078, 2580422.09116872]))
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(array([-11749316.65303046, -11748999.90777981, -11748682.14077029, ...,
+       -11749178.71558259, -11749531.22239381, -11749882.70744613]), array([2905766.05183735, 2905457.83817751, 2905148.48639437, ...,
+       2579612.89349502, 2580017.48641078, 2580422.09116873]))
 </pre></div>
 </div>
 <p>We can plot our projected coordinates using matplotlib.</p>
@@ -403,7 +408,7 @@ will project the coordinates before calculating distances.</p>
 </pre></div>
 </div>
 <img alt="../_images/sphx_glr_projections_003.png" class="sphx-glr-single-img" src="../_images/sphx_glr_projections_003.png" />
-<p><strong>Total running time of the script:</strong> ( 0 minutes  9.046 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  3.346 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-projections-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../_downloads/680e7439fa959628c9df2e49690f043f/projections.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">projections.py</span></code></a></div>
@@ -435,7 +440,7 @@ will project the coordinates before calculating distances.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2018-2018, Leonardo Uieda
-      Last updated on Nov 06, 2018.
+      Last updated on Dec 19, 2018.
 
     </p>
   </div>
@@ -461,6 +466,7 @@ will project the coordinates before calculating distances.</p>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
 
   
